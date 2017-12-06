@@ -4,36 +4,31 @@
     <meta charset="UTF-8">
     <title>start</title>
 </head>
+<body>
 <form action="form.php"method="post">
     <button>登録</button>
 </form>
-<form action="delete.php">
+<form action="delete.php"method="post">
     <button>削除</button>
 </form>
-<form action="update.php">
+<form action="update.php"method="post">
     <button>更新</button>
 </form>
     <p>
         <?php
-            $dsn = 'mysql:dbname=My_gakunenn;host=localhost';
-            $user = 'root';
-            $password = '';
-            try {
-                $dbh = new PDO($dsn, $user, $password);
-                $sql = 'SELECT * REOM My_class';
-                $stmt = $dbh->prepare($sql);
+            require_once __DIR__."/key/XamppAccess.php";
+                $sql = 'SELECT * FROM My_class';
+                $stmt = dbaccess()->prepare($sql);
                 $stmt->execute();
+
+            while($array = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                print $array['banngou'].',';
+                print $array['name'].',';
+                print $array['seibetu'].',';
+                print $array['bukatu'].',';
+                print '<br>';
             }
-
-            catch (PDOException $e){
-                print ('Eroor:'.$e->getMessage());
-                die();
-            }
-
-
-
-
-
         ?>
     </p>
 </body>
