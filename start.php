@@ -26,7 +26,7 @@
                 print $array['banngou'].',';
                 print $array['name'].',';
                 print $array['seibetu'].',';
-                print $array['bukatu'].',';
+                print $array['bukatu'];
                 print '<br>';
             }
         ?>
