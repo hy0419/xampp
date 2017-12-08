@@ -5,6 +5,7 @@
     <title>start</title>
 </head>
 <body>
+<h1>スタート</h1>
 <form action="form.php"method="post">
     <button>登録</button>
 </form>
@@ -18,7 +19,7 @@
         <?php
             require_once __DIR__."/key/XamppAccess.php";
                 $sql = 'SELECT * FROM My_class';
-                $stmt = dbaccess()->prepare($sql);
+                $stmt = dbAccess()->prepare($sql);
                 $stmt->execute();
 
             while($array = $stmt->fetch(PDO::FETCH_ASSOC)) {

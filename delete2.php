@@ -5,18 +5,12 @@
     <title>delete</title>
 </head>
 <body>
-<form action="start.php">
+<form action="sql2.php">
     <button>削除</button>
 <?php
-    require_once __DIR__."/key/XamppAccess.php";
-    $sql = 'DELETE FROM My_class WHERE  banngou = :banngou';
-    $stmt = dbAccess()->prepare($sql);
-
-
-    $stmt -> bindParam(':banngou',$banngou,PDO::PARAM_STR);
-
+    session_start();
     $banngou = filter_input(INPUT_POST,'banngou');
-    $stmt -> execute();
+    $_SESSION['sql2'] = [$banngou];
     ?>
 </form>
 <form action="delete.php">

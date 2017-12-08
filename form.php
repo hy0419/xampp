@@ -5,6 +5,7 @@
 <title>form</title>
 </head>
 <body>
+<h1>登録</h1>
 
 <form action="form2.php" method="post">
 <p>学籍番号：<br>

@@ -4,27 +4,18 @@
     <meta charset="UTF-8">
     <title>delete</title>
 </head>
-<form action="start.php">
+<body>
+<h1>登録２</h1>
+<form action="sql.php">
     <button>登録</button>
 <?php
-    require_once __DIR__."/key/XamppAccess.php";
-    $sql = 'INSERT INTO My_class(banngou,name,seibetu,bukatu) VALUES(:banngou,:name,:seibetu,:bukatu)';
-    $stmt = dbAccess()->prepare($sql);
+session_start();
+$banngou = filter_input(INPUT_POST,'banngou');
+$name = filter_input(INPUT_POST,'name');
+$seibetu = filter_input(INPUT_POST,'seibetu');
+$bukatu = filter_input(INPUT_POST,'bukatu');
 
-
-    $stmt->bindParam(':banngou',$banngou,PDO::PARAM_STR);
-    $stmt->bindParam(':name',$name,PDO::PARAM_STR);
-    $stmt->bindParam(':seibetu',$seibetu,PDO::PARAM_STR);
-    $stmt->bindParam(':bukatu',$bukatu,PDO::PARAM_STR);
-
-    $banngou = filter_input(INPUT_POST,'banngou');
-    $name = filter_input(INPUT_POST,'name');
-    $seibetu = filter_input(INPUT_POST,'seibetu');
-    $bukatu = filter_input(INPUT_POST,'bukatu');
-
-    $stmt->execute();
-
-
+$_SESSION['sql']=[$banngou,$name,$seibetu,$bukatu];
 
 
 ?>
@@ -32,4 +23,5 @@
 <form action="form.php">
     <button>キャンセル</button>
 </form>
+</body>
 </html>
