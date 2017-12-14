@@ -1,6 +1,7 @@
 <?php
 session_start();
 $num=$_POST['banngou'];
+$_SESSION['num']=$num;
 
 require_once __DIR__."/key/XamppAccess.php";
 $sql = 'SELECT * FROM My_class WHERE banngou='.$num;
@@ -42,9 +43,5 @@ while($array = $stmt->fetch(PDO::FETCH_ASSOC)) {
 </form>
 <form action="update.php">
     <button>キャンセル</button>
-<?php
-
-
-?>
 </form>
 </html>

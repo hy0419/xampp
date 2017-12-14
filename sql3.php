@@ -2,11 +2,11 @@
 session_start();
 
 require_once __DIR__."/key/XamppAccess.php";
-    $banngou=$_POST['banngou'];
+    $banngou=$_SESSION['num'];
     $name=$_POST['name'];
     $seibetu=$_POST['seibetu'];
     $bukatu=$_POST['bukatu'];
-    $sql = "UPDATE My_class SET name = :name,seibetu = :seibetu,bukatu =:bukatu WHERE bangou = :bangou";
+    $sql = "UPDATE My_class SET name = :name,seibetu = :seibetu,bukatu = :bukatu WHERE banngou = :banngou";
 
     $stmt = dbAccess()->prepare($sql);
 

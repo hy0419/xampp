@@ -6,6 +6,22 @@
 </head>
 <body>
 <h1>スタート</h1>
+<?php
+    require_once __DIR__."/key/XamppAccess.php";
+    $sql = 'SELECT * FROM My_class';
+    $stmt = dbAccess()->prepare($sql);
+    $stmt->execute();
+
+    while($array = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+        print $array['banngou'].',';
+        print $array['name'].',';
+        print $array['seibetu'].',';
+        print $array['bukatu'];
+        print '<br>';
+}
+?>
+</p>
 <form action="form.php"method="post">
     <button>登録</button>
 </form>
@@ -16,21 +32,6 @@
     <button>更新</button>
 </form>
     <p>
-        <?php
-            require_once __DIR__."/key/XamppAccess.php";
-                $sql = 'SELECT * FROM My_class';
-                $stmt = dbAccess()->prepare($sql);
-                $stmt->execute();
 
-            while($array = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-                print $array['banngou'].',';
-                print $array['name'].',';
-                print $array['seibetu'].',';
-                print $array['bukatu'];
-                print '<br>';
-            }
-        ?>
-    </p>
 </body>
 </html>

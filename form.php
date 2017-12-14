@@ -19,12 +19,6 @@
 
 <button>登録</button>
 
-<p>
-
-<?php
-
-    ?>
-</p>
 </form>
 <form action="start.php">
     <button>戻る</button>

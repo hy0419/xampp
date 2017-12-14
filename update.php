@@ -14,7 +14,4 @@
     <button>戻る</button>
 </form>
 </body>
-<?php
-
-?>
 </html>
