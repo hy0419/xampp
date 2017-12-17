@@ -14,11 +14,11 @@
 
     while($array = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-        print $array['banngou'].',';
-        print $array['name'].',';
-        print $array['seibetu'].',';
-        print $array['bukatu'];
-        print '<br>';
+        echo $array['banngou'].',';
+        echo $array['name'].',';
+        echo $array['seibetu'].',';
+        echo $array['bukatu'];
+        echo '<br>';
 }
 ?>
 </p>
